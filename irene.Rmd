@@ -1,0 +1,107 @@
+---
+title: "A Xaringan template for IRENE"
+subtitle: "Creating interactive and appealing presentations"
+author: "Marc Burri"
+institute: "Univeristy of Neuchâtel"
+department: "Institut de recherches économiques"
+date: "`r Sys.setlocale('LC_TIME', 'C'); format(Sys.Date(),'%B %d, %Y')`"
+output:
+  xaringan::moon_reader:
+    seal: true
+    css: ["default", "irene.css", "irene-fonts.css"]
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+name: contents-slide
+
+```{r xaringanExtra, echo = FALSE}
+xaringanExtra::use_progress_bar(color = "#003865", location = "bottom")
+
+```
+
+```{r xaringanExtra1, echo = FALSE}
+xaringanExtra::use_tile_view()
+``` 
+
+```{r xaringanExtra2, echo = FALSE}
+xaringanExtra::use_logo(
+  # image_url = "logos/UNINE_cmjn_5.jpg",
+  image_url = "logos/IRENE/unine_FSE_IRENE_couleur.jpg",  
+  width="100px",
+  position = xaringanExtra::css_position(top = "2.6em", right = "4.5em")
+)
+```
+
+```{r, eval=T, load_refs, include=FALSE, cache=FALSE}
+# For citations
+library(RefManageR)
+BibOptions(check.entries = F,
+           bib.style = "authoryear",
+           #cite.style = "alphabetic",
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE, 
+           max.names = 2,
+           longnamesfirst = F)
+
+
+bib <- ReadBib("/Users/marcburri/OneDrive - unine.ch/PhD/bibliography.bib", check = FALSE)
+```
+
+# Contents
+        
+[Introduction](#introduction)  </br>
+Body  </br>
+[Conclusion](#conclusion)</br>
+
+---
+name: introduction
+# Introduction 
+
+> The xaringan package is an R Markdown extension based on the JavaScript library remark.js (https://remarkjs.com) to generate HTML5 presentations of a different style. 
+
+--
+
+
+This is a template for staff and students at the institute for economic research (IRENE) at the University of Neuchâtel (compliant with the university style guide, and nice title side) who would like to create interactive and visually appealing presentations. And also for everyone else who would like to adapt this template. 
+
+ 
+--
+- See here for all the advantages of xaringan: https://yihui.org/en/2017/08/why-xaringan-remark-js/
+
+- A documentation can be found here: https://slides.yihui.org/xaringan/#1 
+
+- Awesome AddOns are available here: https://github.com/gadenbuie/xaringanExtra 
+
+- I added support for citing literature (e.g. **`r Citet(bib, "barskyInformationAnimalSpirits2012")`**)
+
+---
+
+```{r eval=require('DT'), tidy=FALSE}
+DT::datatable(
+  head(iris, 10),
+  fillContainer = FALSE, options = list(pageLength = 8)
+)
+```
+
+---
+name: conclusion
+# Thank you!
+
+- Go [back to Contents](#contents-slide)
+
+---
+# References
+
+```{r refs, echo=FALSE, results="asis", message=F, warning=F}
+PrintBibliography(bib, start = 1, end = 7)
+```
+
+---
+class: center middle inverse hide-count
+count: false
+# Appendix

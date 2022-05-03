@@ -1,0 +1,123 @@
+
+/* @font-face {font-family: "Akkurat";
+  src: url("libs/fonts/Akkurat.eot"); /* IE9
+  src: url("libs/fonts/Akkurat.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 
+  url("libs/fonts/Akkurat.woff2") format("woff2"), /* chrome、firefox 
+  url("libs/fonts/Akkurat.woff") format("woff"), /* chrome、firefox 
+  url("libs/fonts/Akkurat.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+
+  url("libs/fonts/Akkurat.svg#Akkurat") format("svg"); /* iOS 4.1- 
+}
+
+
+body, h1, h2, h3{
+    font-family:"Akkurat" !important;
+    font-style:normal;}
+
+.remark-code, .remark-inline-code { font-family: 'Inconsolata', monospace; }
+.remark-code-line-highlighted     { background-color: #ffff88; } */
+
+@font-face {
+    font-family: 'Gellix';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixRegular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixRegularItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixThin.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: italic;
+    font-weight: 100;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixThinItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixLightItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixMedium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixMediumItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixSemiBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: italic;
+    font-weight: 600;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixSemiBoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixBoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixExtraBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: italic;
+    font-weight: 800;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixExtraBoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixBlack.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gellix';
+    font-style: italic;
+    font-weight: 900;
+    src: local('Gellix'), url('https://fonts.cdnfonts.com/s/29655/GellixBlackItalic.woff') format('woff');
+}
+
+body, h1, h2, h3{
+   font-family: 'Gellix', sans-serif;
+    font-style:normal;}
+
+.remark-code, .remark-inline-code { font-family: 'Inconsolata', monospace; }
+.remark-code-line-highlighted     { background-color: #ffff88; }
+
+
