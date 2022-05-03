@@ -5,6 +5,7 @@ author: "Marc Burri"
 institute: "Univeristy of Neuchâtel"
 department: "Institut de recherches économiques"
 date: "`r Sys.setlocale('LC_TIME', 'C'); format(Sys.Date(),'%B %d, %Y')`"
+self_contained: true
 output:
   xaringan::moon_reader:
     seal: true
