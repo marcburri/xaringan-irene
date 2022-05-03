@@ -54,9 +54,18 @@ bib <- ReadBib("/Users/marcburri/OneDrive - unine.ch/PhD/bibliography.bib", chec
 
 # Contents
         
-[Introduction](#introduction)  </br>
-Body  </br>
-[Conclusion](#conclusion)</br>
+- [Introduction](#introduction)  </br>
+
+- [Examples: Plotly](#plotly)</br>
+
+- [Examples: Datatable](#table)</br>
+
+- [Conclusion](#conclusion) </br>
+
+---
+class: center middle inverse hide-count
+count: false
+# Introduction
 
 ---
 name: introduction
@@ -77,16 +86,64 @@ This is a template for staff and students at the institute for economic research
 
 - Awesome AddOns are available here: https://github.com/gadenbuie/xaringanExtra 
 
-- I added support for citing literature (e.g. **`r Citet(bib, "barskyInformationAnimalSpirits2012")`**)
+- I added support for citing literature (e.g. **`r Citet(bib, "burriDailyFeverCurve2020")`**)
+
+- The template is available here: https://github.com/marcburri/xaringan-irene 
 
 ---
+class: center middle inverse hide-count
+count: false
+# Examples
+---
+name: plotly
+# Examples: Plotly 
 
-```{r eval=require('DT'), tidy=FALSE}
+```{r, message=FALSE, warning=FALSE, tidy=FALSE, echo=FALSE}
+library(plotly)
+dta <- read.csv("https://raw.githubusercontent.com/dankaufmann/f-curve/master/Results/f-curve-data.csv")
+
+fig <- plot_ly(dta, type = 'scatter', mode = 'lines')%>%
+  add_trace(x = ~X, y = ~f.curve, name = 'f-curve') %>%
+  add_trace(x = ~X, y = ~smoothed, name = 'smoothed') %>%
+  layout(showlegend = F, title='f-curve with Range Slider and Selectors',
+         xaxis = list(rangeslider = list(visible = T),
+                      rangeselector=list(
+                        buttons=list(
+                          list(count=1, label="1m", step="month", stepmode="backward"),
+                          list(count=6, label="6m", step="month", stepmode="backward"),
+                          list(count=1, label="YTD", step="year", stepmode="todate"),
+                          list(count=1, label="1y", step="year", stepmode="backward"),
+                          list(step="all")
+                        ))))
+fig <- fig %>%
+  layout(
+         xaxis = list(zerolinecolor = 'grey',
+                      zerolinewidth = 2,
+                      gridcolor = 'grey'),
+         yaxis = list(zerolinecolor = 'grey',
+                      zerolinewidth = 2,
+                      gridcolor = 'grey'),
+         plot_bgcolor='#ffff', margin = 0.1, width = 900) 
+fig %>% config(displayModeBar = FALSE)
+
+
+```
+
+---
+name: table
+# Examples: Datatable
+```{r, message=FALSE, warning=FALSE, tidy=FALSE, echo=FALSE}
 DT::datatable(
-  head(iris, 10),
+  tail(dta, 100) %>%
+    dplyr::mutate_if(is.numeric, ~round(.,2)),
   fillContainer = FALSE, options = list(pageLength = 8)
 )
 ```
+
+---
+class: center middle inverse hide-count
+count: false
+# Conclusion
 
 ---
 name: conclusion
